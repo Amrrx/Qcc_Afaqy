@@ -2,7 +2,7 @@
 
 ### master branch - manual Assessment
 #### Customer Module
-  - Test Cases File
+  - Qc_Customer.docx - Test Cases File
 
 ### initial branch - Automation Script 
 #### Classes
