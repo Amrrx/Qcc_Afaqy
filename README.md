@@ -1,7 +1,10 @@
 ## QC Assessment - Repository Content
 
-#- initial branch - Automation Script 
+#- master branch - manual Assessment
+**Customer Module**
+  - Test Cases File
 
+#- initial branch - Automation Script 
 **Classes**
   - qcc_addunit (Test Base) 
   - qcc_loginpage
@@ -15,3 +18,5 @@
 
 **Usage**
 Will follow later
+
+
