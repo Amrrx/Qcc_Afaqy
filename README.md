@@ -1,22 +1,22 @@
 ## QC Assessment - Repository Content
 
 # master branch - manual Assessment
-*Customer Module*
+1. *Customer Module*
   - Test Cases File
 
 # initial branch - Automation Script 
-*Classes*
+1. *Classes*
   - qcc_addunit (Test Base) 
   - qcc_loginpage
   - qcc_sidemenu
   - qcc_unitsodel 
 
-*Libraries used*
+2. *Libraries used*
   - unittest - builtin python library
   - faker - data generator library
   - HtmlTestRunner - Test reporting library
 
-*Usage*
+3. *Usage*
 Will follow later
 
 
