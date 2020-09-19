@@ -2,7 +2,7 @@
 
 #- initial branch - Automation Script 
 
->> 4 Classes
+>> Classes
 - qcc_addunit (Test Base) 
 - qcc_loginpage
 - qcc_sidemenu
@@ -13,5 +13,4 @@
 - faker - data generator library
 - HtmlTestRunner - Test reporting library
 
-- Usage
->> Will follow later
+>> Usage
