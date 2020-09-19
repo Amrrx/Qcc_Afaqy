@@ -2,7 +2,7 @@
 
 #- initial branch - Automation Script 
 
->> Classes
+> Classes
 - qcc_addunit (Test Base) 
 - qcc_loginpage
 - qcc_sidemenu
