@@ -23,7 +23,7 @@ class qcc_unitsmodel:
 
 
     # - Step 5 - Main Tab
-    def mainTabProcess(self):
+    def mainTabProcess(self, devicesList):
         unitNameTextBox = addUnitDialogUIElement.find_element(By.CSS_SELECTOR, "input[testid='name']")
         unitNameTextBox.send_keys(self.dataGenerator.name())
 
@@ -41,7 +41,7 @@ class qcc_unitsmodel:
 
         untiDeviceDropBox = addUnitDialogUIElement.find_element(By.CSS_SELECTOR, "select[testid='device']")
         untiDeviceDropBox.click()
-        deviceValue = untiDeviceDropBox.find_element(By.CSS_SELECTOR, "option[value='bce']")
+        deviceValue = untiDeviceDropBox.find_element(By.CSS_SELECTOR, f"option[value='{self.dataGenerator.random.choice(devicesList)}']")
         deviceValue.click()
         # --- No Assert here
 
@@ -62,9 +62,9 @@ class qcc_unitsmodel:
         dropBoxInputBox.send_keys("TMT")
 
         dropBoxItemsPanel = untiTrailerDropBox.find_element(By.TAG_NAME, "ng-dropdown-panel")
-        dropBoxDriversList = dropBoxItemsPanel.find_elements(By.CSS_SELECTOR, "div[role='option']")
-        while len(dropBoxDriversList) > 1:
-            for x, driverName in enumerate(dropBoxDriversList[1:]):
+        dropBoxTrailersList = dropBoxItemsPanel.find_elements(By.CSS_SELECTOR, "div[role='option']")
+        while len(dropBoxTrailersList) > 1:
+            for x, driverName in enumerate(dropBoxTrailersList[1:]):
                 if driverName.get_attribute("innerText") == "TMT12":
                     driverName.click()
                     break
@@ -85,19 +85,19 @@ class qcc_unitsmodel:
         # --- No Assert here
 
     # - Step 7 - Groups Tab : Tab index = 3
-    def groupTabProcess(self):
+    def groupTabProcess(self, groupName):
         self.switchTab(addUnitDialogUIElement, 3)
         # ======================
         activeTabArea = addUnitDialogUIElement.find_element(By.CSS_SELECTOR, "tab[class='tab-pane active']")
         unitGroupSearchBox = activeTabArea.find_element(By.CSS_SELECTOR, "input[type='text']")
-        unitGroupSearchBox.send_keys("hussien")
+        unitGroupSearchBox.send_keys(groupName)
 
         groupsGridList = addUnitDialogUIElement.find_element(By.CSS_SELECTOR, "div[class='flexgridSelect']")
         groupsGridRowsSpace = groupsGridList.find_element(By.CSS_SELECTOR, "div[wj-part='cells']")
         groupsRowsList = groupsGridRowsSpace.find_elements(By.CSS_SELECTOR, "div[class='wj-row']")
         while len(groupsRowsList) > 1:
             for x, groupName in enumerate(groupsRowsList[1:]):
-                if groupName.get_attribute("innerText") == "hussien":
+                if groupName.get_attribute("innerText") == groupName:
                     groupName.find_element(By.CSS_SELECTOR, "div[role='gridcell']").click()
                     break
             break
@@ -192,7 +192,6 @@ class qcc_unitsmodel:
         notificationDivision = self.driver.find_element(By.TAG_NAME, "simple-notifications")
         sucessNotification = WebDriverWait(notificationDivision, 60).until(EC.visibility_of_element_located((By.CSS_SELECTOR, "div[class*='success']")))
         return sucessNotification
-
 
     # - External Step - Switch Tab Function
     def switchTab(self, addUnitDialogElement, tabIndex):

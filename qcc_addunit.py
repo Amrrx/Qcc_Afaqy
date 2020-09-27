@@ -12,10 +12,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 # </editor-fold>
 
 # <editor-fold desc="So Variables"
-current_URL = "http://stageavl.afaqy.sa/"
-chromePath = (r"Z:\AfaqyAutomationPython\chromedriver.exe")
 dataGenerator = Factory.create()
 global loginPageObject, sideMenuPageObject, unitModelPageObject
+current_URL = "http://stageavl.afaqy.sa/"
+chromePath = (r"Z:\AfaqyAutomationPython\chromedriver.exe")
+username = "Rawahel"
+password = "Asd@123"
+devicesList = ["teltonika","wialon","cmd","bce","bceIotm","galileo","lora","ruptela","afaqy","omni"]
+groupName = "hussien"
 # </editor-fold>
 
 class TestAddingUnit(unittest.TestCase):
@@ -30,7 +34,7 @@ class TestAddingUnit(unittest.TestCase):
         self.assertIsNotNone(loginForm)
 
         # - Step 2 - Login to account
-        verifyLoginDone = loginPageObject.loginToAccount()
+        verifyLoginDone = loginPageObject.loginToAccount(username=username, password=password)
         self.assertIsNotNone(verifyLoginDone)
 
         # - Step 3 - Navigate to units module
@@ -41,11 +45,11 @@ class TestAddingUnit(unittest.TestCase):
         addUnitDialogTitle = unitModelPageObject.openAddUnitDialog()
         self.assertEqual(addUnitDialogTitle, "Add")
 
-        unitModelPageObject.mainTabProcess()
+        unitModelPageObject.mainTabProcess(devicesList= devicesList)
 
         unitModelPageObject.profileTabProcess()
 
-        unitModelPageObject.groupTabProcess()
+        unitModelPageObject.groupTabProcess(groupName= groupName)
 
         unitModelPageObject.fuelTabProcess()
 

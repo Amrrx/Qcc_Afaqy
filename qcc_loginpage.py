@@ -12,12 +12,12 @@ class qcc_loginpage():
         self.driver = driver
 
 
-    def loginToAccount(self):
+    def loginToAccount(self, username, password):
         mailTextBox = self.driver.find_element(By.CSS_SELECTOR, "input[id='email']")
-        mailTextBox.send_keys("Rawahel")
+        mailTextBox.send_keys(username)
 
         passwordTextBox = self.driver.find_element(By.CSS_SELECTOR, "input[id='password']")
-        passwordTextBox.send_keys("Asd@123")
+        passwordTextBox.send_keys(password)
 
         submitButton = self.driver.find_element(By.CSS_SELECTOR, "button[type='submit']")
         submitButton.click()
