@@ -17,6 +17,6 @@
   - HtmlTestRunner - Test reporting library
 
 #### Usage
-  Will follow later
+  Project directory: python qcc_addunit.py
 
 
