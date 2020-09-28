@@ -9,8 +9,10 @@
   - unittest - builtin python library
   - faker - data generator library
   - HtmlTestRunner - Test reporting library
-
+  - Driver - Chrome Driver
+  - WebDriver - Selenium WebDriver
+ 
 #### Usage
-  Will follow later
+  - Project directory: python qcc_addunit.py
 
 
