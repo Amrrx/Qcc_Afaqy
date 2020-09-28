@@ -15,7 +15,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 dataGenerator = Factory.create()
 global loginPageObject, sideMenuPageObject, unitModelPageObject
 current_URL = "http://stageavl.afaqy.sa/"
-chromePath = (r"Z:\AfaqyAutomationPython\chromedriver.exe")
+chromePath = (r"chromedriver.exe")
 username = "Rawahel"
 password = "Asd@123"
 devicesList = ["teltonika","wialon","cmd","bce","bceIotm","galileo","lora","ruptela","afaqy","omni"]
