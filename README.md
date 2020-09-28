@@ -2,8 +2,11 @@
 
 ### master branch - manual Assessment
 #### Customer Module
-  - Qc_Customer.docx - Test Cases File
-
+  - Qc_Customer.docx - Test Cases file
+  - QC_Questions.docx - Therotical questions
+  - Qc_Jumia.docx - Bugs found on jumia application
+  - Jumia Videos.rar - Bugs reference videos
+  
 ### initial branch - Automation Script 
 #### Classes
   - qcc_addunit (Test Base) 
